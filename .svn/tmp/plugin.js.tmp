@@ -1,0 +1,178 @@
+var sustainlyBox = document.createElement("div");
+sustainlyBox.setAttribute("id", "sustainly");
+sustainlyBox.setAttribute("class", "st");
+
+var product_bar_html =
+    [
+    '<div id="st-header">',
+        '<div id="st-header-left">',
+            '<div class="st-content">Sustainly</div>',
+        '</div>',
+        '<div id="st-header-right">',
+            '<div class="st-content">Reviews</div>',
+        '</div>',
+        '<div id="st-header-center">',
+            '<div class="st-content">Energy Details</div>',
+        '</div>',
+    '</div>',                                                             
+    ].join('\n');
+
+var result_bar_html =
+    [
+    '<div id="st-header">',
+        '<div id="st-header-left">',
+            '<div class="st-content">Sustainly</div>',
+        '</div>',
+//        '<div id="st-header-right">',
+//            '<div class="st-content">Close</div>',
+//        '</div>',
+        '<div id="st-header-center">',
+            '<div class="st-content">Analyzer</div>',
+        '</div>',
+    '</div>',                                                             
+    ].join('\n');
+
+var analyzer_html =
+    [
+    '<div id="st-header">',
+        '<div id="st-header-left">',
+            '<div class="st-content">Sustainly</div>',
+        '</div>',
+        '<div id="st-header-right">',
+            '<div class="st-content">Close</div>',
+        '</div>',
+        '<div id="st-header-center">',
+            '<div class="st-content">Analyzer</div>',
+        '</div>',
+    '</div>',
+    '<div id="st-body">',
+        '<div id="st-body-left">',
+            '<div class="st-content">Left Column</div>',
+        '</div>',
+        '<div id="st-body-right">',
+            '<div class="st-content">Right Column</div>',
+        '</div>',
+        '<div id="st-body-center">',
+            '<div class="st-content">Center Column</div>',
+        '</div>',
+    '</div>',                                                             
+    ].join('\n');
+    
+var review_html =
+    [
+    '<div id="st-header">',
+        '<div id="st-header-left">',
+            '<div class="st-content">Sustainly</div>',
+        '</div>',
+        '<div id="st-header-right">',
+            '<div class="st-content">Close</div>',
+        '</div>',
+        '<div id="st-header-center">',
+            '<div class="st-content">Analyzer</div>',
+        '</div>',
+    '</div>',
+    '<div id="st-body">',
+        '<div id="st-body-left">',
+            '<div class="st-content">Left Column</div>',
+        '</div>',
+        '<div id="st-body-right">',
+            '<div class="st-content">Right Column</div>',
+        '</div>',
+        '<div id="st-body-center">',
+            '<div class="st-content">Center Column</div>',
+        '</div>',
+    '</div>',                                                             
+    ].join('\n');
+    
+var energy_html =
+    [
+    '<div id="st-header">',
+        '<div id="st-header-left">',
+            '<div class="st-content">Sustainly</div>',
+        '</div>',
+        '<div id="st-header-right">',
+            '<div class="st-content">Close</div>',
+        '</div>',
+        '<div id="st-header-center">',
+            '<div class="st-content">Analyzer</div>',
+        '</div>',
+    '</div>',
+    '<div id="st-body">',
+        '<div id="st-body-left">',
+            '<div class="st-content">Left Column</div>',
+        '</div>',
+        '<div id="st-body-right">',
+            '<div class="st-content">Right Column</div>',
+        '</div>',
+        '<div id="st-body-center">',
+            '<div class="st-content">Center Column</div>',
+        '</div>',
+    '</div>',                                                             
+    ].join('\n');
+    
+/*
+var xmlhttp = new XMLHttpRequest();
+var htmlURL = chrome.extension.getURL("pluginBox.html");
+alert(htmlURL);
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4){
+        alert(xmlhttp.status);
+        var pluginHTML = xmlhttp.responseText;
+    }
+}
+xmlhttp.open("GET", htmlURL, true);
+xmlhttp.send();
+
+*/
+
+var bodyhtml = document.body.innerHTML;
+var start_result_zero = bodyhtml.indexOf("result_0");
+var start_product_title = bodyhtml.indexOf("btAsinTitle");
+//var strong_start = bodyhtml.indexOf("<strong>");
+
+//Detect if this is a results page
+if (/*window.location.indexOf("rh=") != -1*/ start_result_zero != -1){
+    alert("result page");  
+    sustainlyBox.innerHTML = result_bar_html;
+    sustainlyBox.style.cssText = [
+				  'position: fixed;',
+				  'z-index: 10;'
+				  ].join(' ');
+    document.body.parentElement.insertBefore(sustainlyBox, document.body.nextSibling);
+
+    document.getElementById("st-header-center").onclick=openAnalyzer;
+    
+/*   if (strong_start != -1){
+        var category = bodyhtml.substring(strong_start + 8, bodyhtml.indexOf("</strong>"));
+        alert(category);
+    }
+    else{
+        alert("category not detected");
+    }
+*/
+}
+//Detect if this is a product page
+else if (start_product_title != -1){
+    alert(product_bar_html);
+    sustainlyBox.innerHTML = product_bar_html;
+    document.body.insertBefore(sustainlyBox, document.body.lastChild);
+
+    document.getElementById("st-header-center").onclick=openEnergyDetails;
+    document.getElementById("st-header-right").onclick=openReviews;
+}
+
+
+//Open the Analyzer box
+function openAnalyzer(){
+    sustainlyBox.innerHTML = analyzer_html;
+}
+
+//Open the Reviews box
+function openReviews(){
+    sustainlyBox.innerHTML = review_html;
+}
+
+//Open the Energy Details box
+function openEnergyDetails(){
+    sustainlyBox.innerHTML = energy_html;
+}

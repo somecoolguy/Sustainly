@@ -1,0 +1,179 @@
+/* CSS For Plugin */
+
+.st {
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+}
+
+.st-content {
+  margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
+  margin-top: 0;
+}
+
+.st #st-header {
+  color:#D2D6D9;
+  font-weight: bold;
+  text-align: center;
+  border-radius:10px 10px 0 0; 
+  /*box-shadow:0 1px 5px 0 rgba(0,0,0,0.4);*/
+  background:#323531;
+  height:32px;
+  margin:0 30%;
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.st #st-body {
+  color:#D2D6D9;
+  border-radius:10px 10px 0 0; 
+  background:#323531;
+  height:100px;
+  margin:0 2.5%;
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.st #st-header-left {
+  float: left;
+  width: 32%; /*Width of left column in percentage*/
+  height: 100%;
+  margin-left: 2%;
+  background: #3D4242;
+}
+
+.st #result-header-left {
+  float:left;
+  width:48px;
+  height:100%;
+  background: #3D4242;
+  border-left: 1px solid #FFFFFF;
+  padding:7px;
+}
+
+.st #result-header-center {
+  height:100%;
+  margin: 0 48px 0 48px; /*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
+  background: #3D4242;
+  border-left: 1px solid #FFFFFF;
+  padding:7px;
+}
+
+.st #result-header-right {
+  float:right;
+  width:48px;
+  height:100%;
+  background: #3D4242;
+  border-left: 1px solid #FFFFFF;
+  padding:7px;
+}
+
+.st #product-header-left {
+  float:left;
+  width:48px;
+  height:100%;
+  background: #3D4242;
+  border-left: 1px solid #FFFFFF;
+  padding:7px;
+}
+
+.st #product-header-center {
+  float:left;
+  height:100%;
+/*  margin: 0 48px 0 48px; *//*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
+  width:30%;
+  background: #3D4242;
+  border-left: 1px solid #FFFFFF;
+  padding:7px;
+}
+
+.st #product-header-right {
+  float:left;
+  width:30%;
+  height:100%;
+  background: #3D4242;
+  border-left: 1px solid #FFFFFF;
+  padding:7px;
+}
+
+.st #product-header-far-right {
+  float:left;
+  width:48px;
+  height:100%;
+  background: #3D4242;
+  border-left: 1px solid #FFFFFF;
+  padding:7px;
+}
+
+.st #result-header-center:hover {
+  background:rgba(0, 0, 0, 0.1);
+  cursor:pointer;
+}
+
+.st #product-header-center:hover {
+  background:rgba(0, 0, 0, 0.1);
+  cursor:pointer;
+}
+
+.st #product-header-right:hover {
+  background:rgba(0, 0, 0, 0.1);
+  cursor:pointer;
+}
+
+.st #st-header-left:hover {
+  background:rgba(0, 0, 0, 0.1);
+  cursor:pointer;
+}
+
+.st #st-header-center {
+  height: 100%;
+  width: 32%;
+  margin: 0 32% 0 32%; /*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
+  background: #3D4242;
+  border-left: 1px solid #FFFFFF;
+  padding:7px;
+}
+
+.st #st-header-center:hover {
+  background:rgba(0, 0, 0, 0.1);
+  cursor:pointer;
+}
+
+.st #st-header-right {
+  float: right;
+  width: 32%; /*Width of right column in pixels*/
+  height: 100%;
+  margin: 0 2% 0 0%;
+  background: #3D4242;
+}
+
+.st #st-header-right:hover {
+  background:rgba(0, 0, 0, 0.1);
+  cursor:pointer;
+}
+
+.st #st-body-left {
+  float: left;
+  width: 20%; /*Width of left column in percentage*/
+  height: 100%;
+  margin-left: 2%;
+  background: #3D4242;
+}
+
+.st #st-body-center {
+  height: 100%;
+  margin: 0 22% 0 22%; /*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
+  background: #4F5559;
+}
+
+.st #st-body-right {
+  float: right;
+  width: 20%; /*Width of right column in pixels*/
+  height: 100%;
+  margin-right: 2%; /*Set margin to that of -(RightColumnWidth)*/
+  background: #3D4242;
+}
+
+
